@@ -77,6 +77,10 @@ export default function App() {
         calculator();
         return;
       case '+/-':
+        setCurrentNumber(-1 * currentNumber);
+        return;
+      case '%':
+        setCurrentNumber(currentNumber / 100);
         return;
     }
 
@@ -98,7 +102,7 @@ export default function App() {
             <TouchableOpacity
               onPress={() => handleInput(button)}
               key={button}
-              style={[styles.button, {backgroundColor: '#3dd0e3'}]}>
+              style={[styles.button, {backgroundColor: '#160b30'}]}>
               <Text style={[styles.textButton, {color: 'white', fontSize: 30}]}>
                 {button}
               </Text>
@@ -112,7 +116,7 @@ export default function App() {
               <Text
                 style={[
                   styles.textButton,
-                  {color: typeof button === 'number' ? 'black' : '#0093a6'},
+                  {color: typeof button === 'number' ? 'white' : 'gray'},
                 ]}>
                 {button}
               </Text>
@@ -132,10 +136,10 @@ const styles = StyleSheet.create({
   results: {
     flex: 2,
     justifyContent: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#160b30',
   },
   resultText: {
-    color: '#282F38',
+    color: 'white',
     fontSize: 32,
     fontWeight: 'bold',
     padding: 12,
@@ -152,7 +156,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   button: {
-    backgroundColor: 'white',
+    backgroundColor: '#4e33a2',
     alignItems: 'center',
     justifyContent: 'center',
     minWidth: 90,
@@ -160,7 +164,7 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   textButton: {
-    color: '#7c7c7c',
+    color: 'white',
     fontSize: 20,
   },
 });
