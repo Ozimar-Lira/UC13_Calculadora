@@ -13,13 +13,13 @@ export default function App() {
     8,
     9,
     'x',
-    6,
-    5,
     4,
+    5,
+    6,
     '-',
-    3,
-    2,
     1,
+    2,
+    3,
     '+',
     0,
     '.',
@@ -93,7 +93,7 @@ export default function App() {
 
       {/* Area onde os botões são exibidos*/}
       <View style={styles.buttons}>
-        {buttons.map((button) =>
+        {buttons.map(button =>
           button === '=' ? ( // Mapeamento do botão =
             <TouchableOpacity
               onPress={() => handleInput(button)}
